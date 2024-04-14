@@ -13,4 +13,11 @@ Cargo.lock
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
 
+# Typst generate these
 **.pdf
+
+# Scons generate these
+*.dblite
+compile_commands.json
+bin/
+**/*.os
