@@ -16,7 +16,7 @@
 
 using namespace godot;
 
-void initialize_example_module(ModuleInitializationLevel p_level) {
+void initialize_gdtypst_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
@@ -32,7 +32,7 @@ void initialize_example_module(ModuleInitializationLevel p_level) {
 	GDREGISTER_RUNTIME_CLASS(ExampleRuntime);
 }
 
-void uninitialize_example_module(ModuleInitializationLevel p_level) {
+void uninitialize_gdtypst_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
@@ -40,11 +40,11 @@ void uninitialize_example_module(ModuleInitializationLevel p_level) {
 
 extern "C" {
 // Initialization.
-GDExtensionBool GDE_EXPORT example_library_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
+GDExtensionBool GDE_EXPORT gdtypst_library_init(GDExtensionInterfaceGetProcAddress p_get_proc_address, GDExtensionClassLibraryPtr p_library, GDExtensionInitialization *r_initialization) {
 	godot::GDExtensionBinding::InitObject init_obj(p_get_proc_address, p_library, r_initialization);
 
-	init_obj.register_initializer(initialize_example_module);
-	init_obj.register_terminator(uninitialize_example_module);
+	init_obj.register_initializer(initialize_gdtypst_module);
+	init_obj.register_terminator(uninitialize_gdtypst_module);
 	init_obj.set_minimum_library_initialization_level(MODULE_INITIALIZATION_LEVEL_SCENE);
 
 	return init_obj.init();
