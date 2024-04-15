@@ -24,3 +24,6 @@ bin/
 
 # Godot
 demo/.godot
+
+# CXX
+src/bridge/

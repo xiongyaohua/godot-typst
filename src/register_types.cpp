@@ -12,6 +12,7 @@
 #include <godot_cpp/godot.hpp>
 
 #include "example.h"
+#include "typst.h"
 #include "tests.h"
 
 using namespace godot;
@@ -30,6 +31,8 @@ void initialize_gdtypst_module(ModuleInitializationLevel p_level) {
 	GDREGISTER_CLASS(ExampleBase);
 	GDREGISTER_CLASS(ExampleChild);
 	GDREGISTER_RUNTIME_CLASS(ExampleRuntime);
+	
+	GDREGISTER_CLASS(Typst);
 }
 
 void uninitialize_gdtypst_module(ModuleInitializationLevel p_level) {
