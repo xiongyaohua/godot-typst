@@ -21,3 +21,6 @@ Cargo.lock
 compile_commands.json
 bin/
 **/*.os
+
+# Godot
+demo/.godot
