@@ -13,7 +13,7 @@ protected:
 	static void _bind_methods();
 
 public:
-    size_t add(size_t a, size_t b) {
+    uint64_t add(uint64_t a, uint64_t b) {
         return ::add(a, b);
     }
 

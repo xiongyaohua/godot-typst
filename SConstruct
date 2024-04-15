@@ -25,6 +25,9 @@ env.Alias("compiledb", compilation_db)
 
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=["src/"])
+env.Append(LIBS="godot_typst")
+env.Append(LIBPATH="target/debug/")
+
 sources = Glob("src/*.cpp")
 sources += Glob("src/bridge/*.cpp")
 
@@ -44,6 +47,8 @@ elif env["platform"] == "ios":
         library = env.StaticLibrary(
             "bin/{}".format(file),
             source=sources,
+            LIBS="godot_typst",
+            LIBPATH="target/debug/"
         )
     else:
         file = "{}.{}.{}.a".format(libname, env["platform"], env["target"])
